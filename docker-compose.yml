@@ -1,0 +1,68 @@
+# ñangarekohára - database permissions management
+# Go app + Postgres DB
+version: "3.8"
+
+services:
+  app:
+    container_name: nangarekohara_app
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
+      - DATABASE_HOST=${DB_HOST}
+      - DATABASE_PORT=${DB_PORT}
+      - TEST_POSTGRES_USER=${TEST_DB_USER}
+      - TEST_POSTGRES_PASSWORD=${TEST_DB_PASSWORD}
+      - TEST_POSTGRES_DB=${TEST_DB_NAME}
+      - TEST_DATABASE_HOST=${TEST_DB_HOST}
+      - TEST_DATABASE_PORT=${TEST_DB_PORT}
+    # tty: true
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8000:8080
+    restart: on-failure
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+    networks:
+      - nangarekohara
+
+  db:
+    image: postgres:15.5-bookworm
+    container_name: nangarekohara_db
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
+      - DATABASE_HOST=${DB_HOST}
+    ports:
+      - "${DB_PORT}:5432"
+    volumes:
+      - ./data/pgdata:/var/lib/postgresql/data
+    networks:
+      - nangarekohara
+
+  testdb:
+    image: postgres:15.5-bookworm
+    container_name: nangarekohara_db_test
+    environment:
+      - POSTGRES_USER=${TEST_DB_USER}
+      - POSTGRES_PASSWORD=${TEST_DB_PASSWORD}
+      - POSTGRES_DB=${TEST_DB_NAME}
+      - DATABASE_HOST=${TEST_DB_HOST}
+    ports:
+      - "${TEST_DB_PORT}:5432"
+    volumes:
+      - ./data/pgdata_test:/var/lib/postgresql/data
+    networks:
+      - nangarekohara
+
+volumes:
+  pgdata:
+
+networks:
+  nangarekohara:
+    driver: bridge
