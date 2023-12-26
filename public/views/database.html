@@ -1,0 +1,53 @@
+{{ block "database" . }}
+<div class="row mt-4 g-4">
+    <div class="col-8">
+        <h1 class="mb-4">Databases List</h1>
+        
+        <ul class="list-group fs-5 me-5" id="film-list">
+            {{ range .Databases }}
+            {{ block "database-list-element" .}}
+                <li class="list-group-item bg-primary text-white">[{{ .Database }}] {{ .Name }} - {{ .CreatedAt }}</li>
+            {{ end }}
+            {{ end }}
+        </ul>
+    </div>
+
+    <div class="col-4">
+        <h1 class="mb-4">Add Film</h1>
+            <form hx-post="/add-database/" hx-target="#database-list" hx-swap="beforeend" hx-indicator="#spinner">
+                <div class="form-group">
+                    <label for="database-type">Database Type</label>
+                    <select class="form-control" id="database-type" name="database-type">
+                        <option value="postgres">Postgres</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="database-name">Database Name</label>
+                    <input type="text" class="form-control" id="database-name" name="database-name" placeholder="Enter database name">
+                </div>
+                <div class="form-group">
+                    <label for="database-host">Database Host</label>
+                    <input type="text" class="form-control" id="database-host" name="database-host" placeholder="Enter database host">
+                </div>
+                <div class="form-group">
+                    <label for="database-port">Database Port</label>
+                    <input type="text" class="form-control" id="database-port" name="database-port" placeholder="Enter database port">
+                </div>
+                <div class="form-group">
+                    <label for="database-username">Database Username</label>
+                    <input type="text" class="form-control" id="database-username" name="database-username" placeholder="Enter database username">
+                </div>
+                <div class="form-group">
+                    <label for="database-password">Database Password</label>
+                    <input type="password" class="form-control" id="database-password" name="database-password" placeholder="Enter database password">
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                    <span class="spinner-border spinner-border-sm htmx-indicator" id="spinner" role="status" aria-hidden="true"></span>
+                    Submit
+                </button>
+            </form>
+    </div>
+
+</div>
+{{ end }}
