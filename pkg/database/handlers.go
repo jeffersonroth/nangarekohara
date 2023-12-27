@@ -3,7 +3,7 @@ package database
 import (
 	"html/template"
 
-	"jeffersonroth/nangarekohara/pkg/database/models"
+	"github.com/jeffersonroth/nangarekohara/pkg/database/models"
 
 	"github.com/labstack/echo/v4"
 )

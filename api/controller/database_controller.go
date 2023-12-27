@@ -1,7 +1,7 @@
 package controller
 
 import (
-	"jeffersonroth/nangarekohara/domain"
+	"github.com/jeffersonroth/nangarekohara/domain"
 	"net/http"
 
 	"github.com/labstack/echo/v4"

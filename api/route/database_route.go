@@ -1,12 +1,13 @@
 package route
 
 import (
-	"jeffersonroth/nangarekohara/api/controller"
-	"jeffersonroth/nangarekohara/bootstrap"
-	_ "jeffersonroth/nangarekohara/domain"
-	"jeffersonroth/nangarekohara/repository"
-	"jeffersonroth/nangarekohara/usecase"
 	"time"
+
+	"github.com/jeffersonroth/nangarekohara/api/controller"
+	"github.com/jeffersonroth/nangarekohara/bootstrap"
+	_ "github.com/jeffersonroth/nangarekohara/domain"
+	"github.com/jeffersonroth/nangarekohara/repository"
+	"github.com/jeffersonroth/nangarekohara/usecase"
 
 	"github.com/labstack/echo/v4"
 )

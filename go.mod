@@ -1,4 +1,4 @@
-module jeffersonroth/nangarekohara
+module github.com/jeffersonroth/nangarekohara
 
 go 1.21
 

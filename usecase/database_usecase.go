@@ -2,8 +2,9 @@ package usecase
 
 import (
 	"context"
-	"jeffersonroth/nangarekohara/domain"
 	"time"
+
+	"github.com/jeffersonroth/nangarekohara/domain"
 )
 
 type databaseUsecase struct {

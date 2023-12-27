@@ -3,7 +3,7 @@ package database
 import (
 	"os"
 
-	"jeffersonroth/nangarekohara/pkg/database/models"
+	"github.com/jeffersonroth/nangarekohara/pkg/database/models"
 
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"

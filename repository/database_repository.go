@@ -2,7 +2,8 @@ package repository
 
 import (
 	"context"
-	"jeffersonroth/nangarekohara/domain"
+
+	"github.com/jeffersonroth/nangarekohara/domain"
 
 	_ "github.com/lib/pq"
 	"gorm.io/gorm"

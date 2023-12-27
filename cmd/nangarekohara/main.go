@@ -1,9 +1,10 @@
 package main
 
 import (
-	route "jeffersonroth/nangarekohara/api/route"
-	"jeffersonroth/nangarekohara/bootstrap"
 	"time"
+
+	route "github.com/jeffersonroth/nangarekohara/api/route"
+	"github.com/jeffersonroth/nangarekohara/bootstrap"
 
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"

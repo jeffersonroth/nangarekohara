@@ -1,8 +1,9 @@
 package route
 
 import (
-	"jeffersonroth/nangarekohara/bootstrap"
 	"time"
+
+	"github.com/jeffersonroth/nangarekohara/bootstrap"
 
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"

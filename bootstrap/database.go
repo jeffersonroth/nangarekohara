@@ -2,8 +2,9 @@ package bootstrap
 
 import (
 	"context"
-	"jeffersonroth/nangarekohara/pkg/database/models"
 	"time"
+
+	"github.com/jeffersonroth/nangarekohara/pkg/database/models"
 
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"

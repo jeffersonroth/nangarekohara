@@ -4,9 +4,10 @@ import (
 	"database/sql"
 	"html/template"
 	"io"
-	"jeffersonroth/nangarekohara/pkg/database"
-	"jeffersonroth/nangarekohara/pkg/pages"
 	"log"
+
+	"github.com/jeffersonroth/nangarekohara/pkg/database"
+	"github.com/jeffersonroth/nangarekohara/pkg/pages"
 
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
