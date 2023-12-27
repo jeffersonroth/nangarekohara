@@ -1,5 +1,5 @@
 # ñangarekohára - database permissions management
-# Go app + Postgres DB
+# Go app + Go microservices + Postgres DB
 version: "3.8"
 
 services:
@@ -16,7 +16,6 @@ services:
       - TEST_POSTGRES_DB=${TEST_DB_NAME}
       - TEST_DATABASE_HOST=${TEST_DB_HOST}
       - TEST_DATABASE_PORT=${TEST_DB_PORT}
-    # tty: true
     build:
       context: .
       dockerfile: Dockerfile

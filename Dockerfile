@@ -23,7 +23,7 @@ COPY ../. .
 COPY ../.env .
 
 # Build the Go app
-RUN go build -o main ./cmd/nangarekohara
+RUN go build -o main ./cmd/app
 
 # Expose port 8080 to the outside world
 EXPOSE 8080
