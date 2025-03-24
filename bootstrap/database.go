@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/jeffersonroth/nangarekohara/pkg/database/models"
+	"github.com/jeffersonroth/nangarekohara/domain"
 
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
@@ -27,7 +27,7 @@ func Init(env *Env) *gorm.DB {
 	}
 
 	// Migrations
-	db.AutoMigrate(&models.Database{})
+	db.AutoMigrate(&domain.Database{})
 
 	return db
 }
